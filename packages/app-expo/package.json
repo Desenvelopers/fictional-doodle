@@ -1,5 +1,5 @@
 {
-  "name": "@omnirepo/app-expo",
+  "name": "@hackathon/app-expo",
   "version": "0.0.1",
   "main": "__generated__/AppEntry.js",
   "scripts": {
