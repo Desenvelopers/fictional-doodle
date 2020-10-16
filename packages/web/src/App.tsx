@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import api from '@omnirepo/axios-config'
+import api from '@hackathon/axios-config'
 
 // import { Container } from './styles';
 
