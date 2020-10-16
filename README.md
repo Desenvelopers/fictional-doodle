@@ -4,4 +4,4 @@
 
 
 ### Referências de Codigo
-  - [Estrutura Monorepo por Rockeseat]: https://github.com/rocketseat-content/youtube-monorepo
+- [Estrutura Monorepo por Rockeseat](https://github.com/rocketseat-content/youtube-monorepo)
