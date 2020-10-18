@@ -3,7 +3,7 @@
 ### Alterações feitas no diretorio '/packages/server'
 
 ### Representação grafica para o nosso modelo base de negócio
-![file:///C:/Users/Guilherme/Downloads/Produto_Diagrama.png]
+![](file:///C:/Users/Guilherme/Downloads/Produto_Diagrama.png)
 
 ### Ferramentas
 - [Miro]
