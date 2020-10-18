@@ -31,3 +31,15 @@ Um fluxo comum do produto desde o momento de sua venda, até a entrega para o se
 - [pdf-creator-node](https://www.npmjs.com/package/pdf-creator-node): "^1.4.1" ,
 - [qrcode](https://www.npmjs.com/package/qrcode): "^1.4.4",
 - [socket.io](https://socket.io): "^2.3.0"
+
+## Iniciando
+
+Primeiro, para o servidor de desenvolvimento:
+
+npm run start
+# or
+yarn start
+
+Open [http://localhost/:3333](http//localhost:3333) with your browser to see the result.
+
+
