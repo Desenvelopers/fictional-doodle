@@ -1,7 +1,5 @@
 # Hackathon - Desenvelopers
 
-### Alterações feitas no diretorio '/packages/server'
-
 ### Representação grafica para o nosso modelo base de negócio
 Um fluxo comum do produto desde o momento de sua venda, até a entrega para o seu comprador
 ![Produto_Diagrama](https://user-images.githubusercontent.com/66282650/96369471-8ad13180-1130-11eb-9758-227929fb4560.png)
