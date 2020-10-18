@@ -11,11 +11,13 @@ Um fluxo comum do produto desde o momento de sua venda, até a entrega para o se
 ![Produto_Diagrama](https://github.com/Desenvelopers/fictional-doodle/raw/main/imgs/Telas%204.png)
 
 ### Ferramentas
-- [Miro](https://miro.com/welcomeonboard/0Kp9DglP4wHWE1uRfufbWzru5xYCQ6aSp7Y8oMa2Pnk6ILtlTO27ZRp8BcP42wSA)
+- [Miro - Veja nossos protótipos](https://miro.com/welcomeonboard/0Kp9DglP4wHWE1uRfufbWzru5xYCQ6aSp7Y8oMa2Pnk6ILtlTO27ZRp8BcP42wSA)
 - [Figma](https://www.figma.com/file/zjEhgGsrSxs6EJ5DLKKz8A/eCoop?node-id=0%3A1)
 - Adobe Photoshop
 - Adobe Premiere
 - Adobe After Effects
+- Adobe Illustrator
+- Google Forms
 
 
 ### Referências de Codigo
