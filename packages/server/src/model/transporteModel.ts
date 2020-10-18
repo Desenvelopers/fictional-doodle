@@ -4,15 +4,18 @@ import mongoose from 'mongoose'
 const transportSchema = new mongoose.Schema({
     nomeVendedor:String,
     nomeComprador: String,
-    hashProduto: String,
+    hashProduto: {
+        type: String,
+        unique: true        
+    },
     idVenda: Number,
     ocupacaoAtual: {
         type: String,
         default: 'V'
     },
-    proximaOcupaca: {
+    proximaOcupacao: {
         type: String,
-        default: 'C'
+        default: 'CR'
     },
     travellerId: mongoose.Types.ObjectId,
     eContainerDestinatarioId: mongoose.Types.ObjectId,

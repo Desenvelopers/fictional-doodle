@@ -12,8 +12,13 @@ class produtoController {
         })
     }
 
+    
     static async getHashProdutoByIdTransporte( idTransporte ){
         return await produtoRepository.getProdutoHashByIdTransporte( idTransporte )
+    }
+
+    static async getProdutoByHash( hashProduto ) {
+        return await produtoRepository.getProdutoByHash(hashProduto)
     }
 
     static async insertProduto(produtoReq, idVenda){
@@ -22,11 +27,15 @@ class produtoController {
             qtdProduto: produtoReq.qtd,
             corProduto: produtoReq.cor,
             pesoProduto: produtoReq.peso,
-            hashProduto: produtoReq.hash,
+            hashProduto: produtoReq.hashProduto,
             idVenda: idVenda
         })
 
-        return JSON.stringify( await produto.save() )
+        return ( await produto.save() ).toJSON()
+    }
+
+    static async setProdutoEntregue( hashProduto ){
+        return await produtoRepository.updateOne( { hashProduto: null, entregue: true } ).where( { hashProduto: hashProduto } ).exec()
     }
 }
 

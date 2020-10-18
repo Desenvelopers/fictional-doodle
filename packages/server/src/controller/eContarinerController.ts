@@ -5,8 +5,8 @@ import TipoUserContoller from "./tipoUserController"
 const enderecoController = new EnderecoController()
 
 class EContainerController {
-    static async getContainerByCity( nomeCidade ){
-        return await enderecoController.getIdUserByCityAndType( 'C', nomeCidade)
+    static async getIdContainerByCity( nomeCidade : String ){
+        return await enderecoController.getIdUserByCityAndType( 'C', nomeCidade.toUpperCase())
     }
 
     async insertEContainer( eContainerReq ) {
@@ -20,7 +20,7 @@ class EContainerController {
 
         await EnderecoController.insertEndereco( eContainerReq.endereco, eContainerModel._id )
 
-        return JSON.stringify( await eContainerModel.save() )
+        return ( await eContainerModel.save() ).toJSON()
     }
 }
 

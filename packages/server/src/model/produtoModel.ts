@@ -5,8 +5,15 @@ const produtoSchema = new mongoose.Schema({
     qtdProduto: Number,
     corProduto: String,
     pesoProduto: Number,
-    hashProduto: String,
-    idVenda: Number
+    hashProduto: {
+        type: String,
+        unique: true
+    },
+    idVenda: Number,
+    entregue: {
+        type: Boolean,
+        default: false
+    }
 }, {
     timestamps: {
         createdAt: 'created_at',

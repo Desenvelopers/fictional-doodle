@@ -10,6 +10,10 @@ import Produto from '../model/produtoModel'
 
 import TravellerController from './travellerController'
 import EContainerController from './eContarinerController'
+import etapas from '../etapaTransporteEnum'
+import eContainerModel from '../model/eContainerModel'
+import transporteModel from '../model/transporteModel'
+import travellerModel from '../model/travellerModel'
 
 interface requestTransporte {
     idVenda: number;
@@ -35,7 +39,7 @@ class TransporteController {
         await this.salvarInfosTransporte({ idVenda, compradorReq, vendedorReq, produtoReq, dataDeposito })
 
         const document = {
-            // TODO
+            // TODO TEMPLATE
             html: "<img src={{url}}>",
             data: {
                 url: produtoQrCode,
@@ -46,7 +50,8 @@ class TransporteController {
 
         await pdf.create( document )
 
-        // return transporte
+        return
+
     }
 
     async salvarInfosTransporte({ idVenda, compradorReq, vendedorReq, produtoReq, dataDeposito }: requestTransporte) {
@@ -56,12 +61,59 @@ class TransporteController {
             hashProduto: produtoReq.hashProduto,
             idVenda: idVenda,
             travellerId: await TravellerController.escolherMelhorViajanteDisponivel(vendedorReq.endereco.cidade, compradorReq.endereco.cidade, dataDeposito),
-            eContainerDestinatarioId: await EContainerController.getContainerByCity( compradorReq.endereco.cidade ),
-            eContainerRemententeId: await EContainerController.getContainerByCity( vendedorReq.endereco.cidade ),
+            eContainerDestinatarioId: await EContainerController.getIdContainerByCity( compradorReq.endereco.cidade ),
+            eContainerRemententeId: await EContainerController.getIdContainerByCity( vendedorReq.endereco.cidade ),
             dataDeposito: dataDeposito
         })
 
-        return console.log(JSON.stringify(await transporte.save()))
+        return console.log((await transporte.save()).toJSON())
+    }
+
+    async atualizarStatus( hashProduto ) {
+        var transporte
+        var transportJSON
+        try{
+            transporte = await TransporteRepository.getByHashProduto( hashProduto )
+            transportJSON = transporte.toJSON()
+        } catch {
+            return { error: 'Produto não cadastrado ou entrega finalizada!' }
+        }
+
+        const next = etapas.findIndex( (etapa) => etapa == transportJSON.proximaOcupacao )
+
+        if ( next + 1 >= etapas.length ) {
+            await produtoController.setProdutoEntregue( hashProduto )
+            await transporte.updateOne({ hashProduto: null }).exec()
+        } else {
+            await transporte.updateOne({
+                ocupacaoAtual: transportJSON.proximaOcupacao,
+                proximaOcupacao: etapas[next+1]
+            }).exec()
+        
+        }
+
+        return transporte.toJSON()
+    }
+
+    async getStatusByHash( hashProduto ) {
+        try{
+            const transporte = await TransporteRepository.getByHashProduto( hashProduto )
+            const produto = await produtoController.getProdutoByHash( hashProduto )
+            const eContainerDest = await eContainerModel.findById( transporte.toJSON().eContainerDestinatarioId )
+            const eContainerRem = await eContainerModel.findById( transporte.toJSON().eContainerRemententeId )
+            const traveller = await travellerModel.findById( transporte.toJSON().travellerId )
+
+            return {
+                transporte: transporte.toJSON(),
+                produto: produto.toJSON(),
+                eContainerDest: eContainerDest.toJSON(),
+                eContainerRem: eContainerRem.toJSON(),
+                traveller: traveller.toJSON()
+            }
+        } catch (err) {
+            return { error: err }
+        } 
+
     }
 }
 

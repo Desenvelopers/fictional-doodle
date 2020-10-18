@@ -29,7 +29,7 @@ class TravellerController {
 
         await EnderecoController.insertEndereco( travellerReq.endereco, traveller._id )
 
-        return JSON.stringify(await traveller.save())
+        return (await traveller.save()).toJSON()
     }
 }
 

@@ -14,7 +14,7 @@ class ViagemController extends viagemModel {
             cidadeChegada: viagemReq.cidadeChegada
         })
 
-        return JSON.stringify(await viagem.save())
+        return (await viagem.save()).toJSON()
     }
 }
 

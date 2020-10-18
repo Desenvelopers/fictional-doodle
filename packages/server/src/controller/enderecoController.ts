@@ -23,6 +23,10 @@ class EnderecoController {
 
         await enderecoModel.save()
     }
+
+    static async getEnderecoByUserId( userId ){
+        return (await enderecoRepository.getEnderecoByUserId(userId)).toJSON()
+    }
 }
 
 export default EnderecoController

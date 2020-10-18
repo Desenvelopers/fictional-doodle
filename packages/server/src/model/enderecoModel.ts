@@ -33,8 +33,14 @@ const enderecoSchema = new mongoose.Schema({
     rua: String,
     numero: Number,
     bairro: String,
-    cidade: String,
-    estado: String,
+    cidade: {
+        type: String,
+        uppercase: true
+    },
+    estado: {
+        type: String,
+        uppercase: true
+    },
     cep: Number,
     complemento: String,
     idUsuario: mongoose.Types.ObjectId,

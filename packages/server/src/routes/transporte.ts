@@ -21,18 +21,12 @@ router.post( '/gerarinfos/:idvenda', async (req, res)=> {
 
 } )
 
-router.post('/inserir/:idvenda', async (req, res) => {
-    const transporte = await transporteController.salvarInfosTransporte(  {
-        idVenda: Number(req.params.idvenda),
-        compradorReq: req.body.comprador,
-        vendedorReq: req.body.vendedor,
-        produtoReq: req.body.produto,
-        dataDeposito: req.body.dataDeposito
-    }  )
+router.put( '/atualizarstatus/:hashproduto', async (req, res) =>{
+    return res.status(200).json(await transporteController.atualizarStatus( req.params.hashproduto ))
+} )
 
-    return res.status(200).json(transporte)
+router.get('/getstatus/:hashproduto', async (req, res) => {
+    return res.status(200).json(await transporteController.getStatusByHash( req.params.hashproduto ))
 })
-
-
 
 export default router
