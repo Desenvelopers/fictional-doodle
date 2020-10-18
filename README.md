@@ -4,6 +4,12 @@
 Um fluxo comum do produto desde o momento de sua venda, até a entrega para o seu comprador
 ![Produto_Diagrama](https://user-images.githubusercontent.com/66282650/96369471-8ad13180-1130-11eb-9758-227929fb4560.png)
 
+### Telas do protótipo
+![Produto_Diagrama](https://github.com/Desenvelopers/fictional-doodle/raw/main/imgs/Telas%201.png)
+![Produto_Diagrama](https://github.com/Desenvelopers/fictional-doodle/raw/main/imgs/Telas%202.png)
+![Produto_Diagrama](https://github.com/Desenvelopers/fictional-doodle/raw/main/imgs/Telas%203.png)
+![Produto_Diagrama](https://github.com/Desenvelopers/fictional-doodle/raw/main/imgs/Telas%204.png)
+
 ### Ferramentas
 - [Miro](https://miro.com/welcomeonboard/0Kp9DglP4wHWE1uRfufbWzru5xYCQ6aSp7Y8oMa2Pnk6ILtlTO27ZRp8BcP42wSA)
 - [Figma](https://www.figma.com/file/zjEhgGsrSxs6EJ5DLKKz8A/eCoop?node-id=0%3A1)
