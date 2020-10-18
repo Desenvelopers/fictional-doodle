@@ -42,7 +42,7 @@ yarn start
 
 Open [http://localhost/:3333](http//localhost:3333) with your browser to see the result.
 
-## Rotas
+### Rotas
 # Registrando viajante
 [POST] - [http://localhost/:3333/traveller/insert](http//localhost:3333/traveller/insert)
 - Corpo da requisição de Exemplo: {"traveller":{"nome": "guilherme","cpf": "01234567890","veiculo": "astra pancadao","endereco": {"rua": "teste rua","numero": 1104,"bairro": "centro","cidade": "Francisco Beltrao","estado": "pr","cep": 85660000,"complemento": ""}}}
