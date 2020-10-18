@@ -6,7 +6,6 @@ import Transporte from '../model/transporteModel'
 import TransporteRepository from '../repository/transporteRepository'
 
 import produtoController from './produtoController'
-import Produto from '../model/produtoModel'
 
 import TravellerController from './travellerController'
 import EContainerController from './eContarinerController'
@@ -38,11 +37,18 @@ class TransporteController {
 
         await this.salvarInfosTransporte({ idVenda, compradorReq, vendedorReq, produtoReq, dataDeposito })
 
+        const template = fs.readFileSync('./src/templates/PDF/index.html', 'utf-8')
+
         const document = {
             // TODO TEMPLATE
-            html: "<img src={{url}}>",
+            html: template,
             data: {
                 url: produtoQrCode,
+                hash: hashProduto,
+                recebedorNome: compradorReq.nome.toUpperCase(),
+                idVenda: String(idVenda),
+                endDest: JSON.stringify(compradorReq.endereco),
+                endRem: JSON.stringify(vendedorReq.endereco)
                 // ruaDestinatario: compradorReq.endereco.rua
             },
             path: './src/tmp/output.pdf'

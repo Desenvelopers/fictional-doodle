@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <!-- <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Saas</title>
 
@@ -11,13 +11,13 @@
     <link
       rel="stylesheet"
       href="./images/yu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6o.png"
-    />
+    /> -->
 
     <style>
       .QR {
         margin-left: 0px;
-        margin-right: -100px;
-        width: 220px;
+        margin-right: -600px;
+        width: 200px;
       }
       .logo {
         width: 80px;
@@ -79,27 +79,30 @@
 
     <table>
       <tr>
-        <th style="vertical-align: bottom">
-          Recebedor_______________________________________________________
-          Assinatura___________________________ Documento__________________
+        <th style="vertical-align: bottom; width: 1000px;">
+          Recebedor:  {{recebedorNome}}________________________________
+          Assinatura:___________________________ Documento: {{idVenda}}
         </th>
         <img class="logo" src="./images/Frame.svg" alt="" />
 
         <th>
           <img
             class="QR"
-            src="./images/yu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6oiu6o.png"
+            src={{url}}
             alt=""
-          />
+          /><div>{{hash}}</div>
         </th>
       </tr>
       <tr></tr>
     </table>
 
     <table>
-      <th style="vertical-align: top">Destinatário</th>
+      <th style="vertical-align: top">Destinatário
+        <p>{{endDest}}</p></th>
+      
       <tr></tr>
-      <th style="vertical-align: top">Remetente</th>
+      <th style="vertical-align: top">Remetente<p>{{endRem}}</p></th>
+      
     </table>
 
   </body>
