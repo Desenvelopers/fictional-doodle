@@ -42,32 +42,32 @@ yarn start
 
 Open [http://localhost/:3333](http//localhost:3333) with your browser to see the result.
 
-### Rotas
-# Registrando viajante
+## Rotas
+### Registrando viajante
 [POST] - [http://localhost/:3333/traveller/insert](http//localhost:3333/traveller/insert)
 - Corpo da requisição de Exemplo: {"traveller":{"nome": "guilherme","cpf": "01234567890","veiculo": "astra pancadao","endereco": {"rua": "teste rua","numero": 1104,"bairro": "centro","cidade": "Francisco Beltrao","estado": "pr","cep": 85660000,"complemento": ""}}}
 
-# Registrando eContainer
+### Registrando eContainer
 [POST] - [http://127.0.0.1:3333/econtainer/insert]( http://127.0.0.1:3333/econtainer/insert)
 - Corpo da requisição de Exemplo: {"eContainer":{"nome": "guilherme","cnpj": "01234567890","endereco": {"rua": "teste rua","numero": 1104,"bairro": "centro","cidade": "francisco beltrao","estado": "pr","cep": 85660000,"complemento": "","tipoUsuario": "C"}}}
 
 - Obs: Inserir segundo registro com a cidade de sao paulo, sem caracteres especiais
 
-# Registrando Viagem
+### Registrando Viagem
 [POST] - [http://localhost:3333/viagem/inserir/:idViajante](http://localhost:3333/viagem/inserir/5f8bfdcf9d1359390054ca26)
 - Corpo da requisição de Exemplo:{"viagem":{"data": "Mon, 27 Dec 1995 13:30:00 GMT","cidadePartida": "Francisco Beltrao","cidadeChegada": "sao paulo"}}
 
-# Registrando Transporte
+### Registrando Transporte
 [POST] - [http://localhost:3333/transporte/gerarinfos/:idVenda](http://localhost:3333/transporte/gerarinfos/577)
 - Corpo da requisição de Exemplo: {"vendedor":{"nome": "claudio","endereco": {"cidade": "Francisco Beltrao"}},"comprador": {"nome": "roberta","endereco": {"cidade": "sao paulo"}},"produto": {"nome": "teste","qtd": 1,"cor": "preto","peso": 196},"dataDeposito": "Mon, 25 Dec 1995 13:30:00 GMT"}
 
 - Obs: Retornará um PDF com o QRCode e outras informações
 
-# Atualizar status Transporte(QR Code Request)
+### Atualizar status Transporte(QR Code Request)
 [PUT] - [http://localhost:3333/transporte/atualizarstatus/:hashProduto](http://localhost:3333/transporte/atualizarstatus/:hashProduto)
 
-# Pegar informações Transporte
+### Pegar informações Transporte
 [GET] - [http://localhost:3333/transporte/getstatus/:hashProduto](http://localhost:3333/transporte/getstatus/:hashProduto)
 
-# Pegar detalhes endereço de usuario
+### Pegar detalhes endereço de usuario
 [GET] - [http://localhost:3333/endereco/selecionar/:idUsuario](http://localhost:3333/endereco/selecionar/5f8bfdcf9d1359390054ca26)
